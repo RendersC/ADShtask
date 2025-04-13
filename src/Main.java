@@ -11,6 +11,9 @@ public class Main {
 
         System.out.println("\n\n\n TEST MyQueue");
         testMyQueue();
+
+        System.out.println("\n\n\n TEST MyMinHeap");
+        testMyMinHeap();
     }
 
     public static void testMyArrayList() {
@@ -150,4 +153,22 @@ public class Main {
         queue.dequeue();
         System.out.println("Is empty after clearing? " + queue.isEmpty()); // true
     }
+
+
+    public static void testMyMinHeap() {
+        MyMinHeap<Integer> heap = new MyMinHeap<>();
+
+        heap.insert(10);
+        heap.insert(4);
+        heap.insert(7);
+        heap.insert(2);
+        heap.insert(5);
+
+        System.out.println("Heap: " + heap);         // [2, 4, 7, 10, 5]
+        System.out.println("Peek: " + heap.peek());  // 2
+
+        System.out.println("Extract Min: " + heap.extractMin()); // 2
+        System.out.println("Heap after extract: " + heap);        // [4, 5, 7, 10]
+    }
+
 }
