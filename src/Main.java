@@ -8,6 +8,9 @@ public class Main {
 
         System.out.println("\n\n TEST MyStack: ");
         testMyStack();
+
+        System.out.println("\n\n\n TEST MyQueue");
+        testMyQueue();
     }
 
     public static void testMyArrayList() {
@@ -125,5 +128,26 @@ public class Main {
         stack.pop();
         stack.pop();
         System.out.println("Is empty after clearing? " + stack.isEmpty());
+    }
+
+
+    public static void testMyQueue() {
+        MyQueue<Integer> queue = new MyQueue<>();
+
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        System.out.println("Queue: " + queue);
+
+        System.out.println("Peek: " + queue.peek());  // 1
+        System.out.println("Dequeue: " + queue.dequeue()); // 1
+        System.out.println("After dequeue: " + queue); // 2, 3
+
+        System.out.println("Size: " + queue.size()); // 2
+        System.out.println("Is empty? " + queue.isEmpty()); // false
+
+        queue.dequeue();
+        queue.dequeue();
+        System.out.println("Is empty after clearing? " + queue.isEmpty()); // true
     }
 }
