@@ -3,8 +3,11 @@ public class Main {
         System.out.println("TEST MyArrayList: ");
         testMyArrayList();
 
-        System.out.println("\n\n\n\nTEST MyLinkedList:");
+        System.out.println("\n\n\n\nTEST MyLinkedList: ");
         testMyLinkedList();
+
+        System.out.println("\n\n TEST MyStack: ");
+        testMyStack();
     }
 
     public static void testMyArrayList() {
@@ -101,5 +104,26 @@ public class Main {
             System.out.print(el + " ");
         }
         System.out.println(" (SIZE: " + list.size() + ")");
+    }
+
+
+    public static void testMyStack() {
+        MyStack<Integer> stack = new MyStack<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("Stack: " + stack);
+
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Pop: " + stack.pop());
+        System.out.println("After pop: " + stack);
+
+        System.out.println("Size: " + stack.size());
+        System.out.println("Is empty? " + stack.isEmpty());
+
+        stack.pop();
+        stack.pop();
+        System.out.println("Is empty after clearing? " + stack.isEmpty());
     }
 }
